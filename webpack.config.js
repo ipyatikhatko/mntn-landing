@@ -1,5 +1,4 @@
 const path = require('path');
-const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -10,6 +9,14 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource',
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+      },
       {
         test: /\.s[ac]ss$/i,
         use: [
@@ -22,20 +29,13 @@ module.exports = {
         test: /\.hbs$/,
         loader: 'handlebars-loader',
       },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf)$/i,
-        type: 'asset/resource',
-      },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/templates/main.hbs',
       filename: 'index.html',
-    }),
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
-    }),
+    })
   ],
   devServer: {
     static: path.join(__dirname, 'dist'),

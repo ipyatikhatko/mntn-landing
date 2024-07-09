@@ -1,5 +1,6 @@
 @import "_variables";
 @import "_fonts";
+@import "_helpers";
 
 .nav {
   color: $text-main;
@@ -12,12 +13,13 @@
   @include montserratFont(400, normal);
 
   &__logo {
-    @include bonaFont(400, normal);
+    @include bonaFont(400, bold);
   }
 
   &__links {
     display: flex;
     gap: 1em;
+    font-size: 14px;
     &__item {
       text-decoration: none;
       color: $text-main;
@@ -28,6 +30,10 @@
   }
 
   &__account {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
     appearance: none;
     text-decoration: none;
     background-color: transparent;
@@ -37,6 +43,10 @@
     @include montserratFont(400, normal);
     &:hover {
       opacity: 0.5;
+    }
+
+    &__icon {
+      @include backgroundImage("./assets/icons/account.svg", 20px, 20px);
     }
   }
 }
