@@ -1,0 +1,42 @@
+@import "_variables";
+@import "_fonts";
+
+.nav {
+  color: $text-main;
+  height: $nav-height;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3em;
+
+  @include montserratFont(400, normal);
+
+  &__logo {
+    @include bonaFont(400, normal);
+  }
+
+  &__links {
+    display: flex;
+    gap: 1em;
+    &__item {
+      text-decoration: none;
+      color: $text-main;
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &__account {
+    appearance: none;
+    text-decoration: none;
+    background-color: transparent;
+    color: $text-main;
+    border: none;
+    cursor: pointer;
+    @include montserratFont(400, normal);
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}

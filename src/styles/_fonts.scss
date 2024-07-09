@@ -1,0 +1,12 @@
+@mixin bonaFont($weight, $style) {
+  font-family: "Bona Nova SC", serif;
+  font-weight: $weight;
+  font-style: $style;
+}
+
+@mixin montserratFont($weight, $style) {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: $weight;
+  font-style: $style;
+}
