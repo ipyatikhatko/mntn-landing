@@ -1,9 +1,11 @@
 @import "./styles/variables";
 @import "./styles/nav";
+@import "./styles/hero";
 @import "./styles/fonts";
 
 * {
   margin: 0;
+  box-sizing: border-box;
 }
 
 body {

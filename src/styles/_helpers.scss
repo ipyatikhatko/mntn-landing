@@ -3,7 +3,70 @@
   width: $w;
   height: $h;
   display: block;
-  background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+/*
+* Variables for breakpoints
+*/
+$mobile-landscape: 368px;
+$tablet: 768px;
+$desktop: 1024px;
+
+/*
+* Map for breakpoints
+*/
+$breakpoints: (
+  "sm": (
+    min-width: $mobile-landscape,
+  ),
+  "md": (
+    min-width: $tablet,
+  ),
+  "lg": (
+    min-width: $desktop,
+  ),
+); 
+
+@mixin responsive($size) {
+  $query: map-get($breakpoints, $size);
+  $min-width: map-get($query, "min-width");
+
+  @media (min-width: #{$min-width}) {
+    @content;
+  }
+}
+
+@keyframes fade-down {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@mixin fadeDown($delay: 1s) {
+  animation-name: fade-down;
+  animation-duration: 1.5s;
+  animation-fill-mode: both;
+  animation-delay: $delay;
+}
+
+@mixin scaleFromTo($from: 1, $to: 1.1) {
+  @keyframes anim {
+    from {
+      transform: scale($from);
+    }
+    to {
+      transform: scale($to);
+    }
+  }
+
+  animation-name: anim;
+  animation-fill-mode: both;
+  @content;
 }

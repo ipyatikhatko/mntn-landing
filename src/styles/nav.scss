@@ -6,9 +6,22 @@
   color: $text-main;
   height: $nav-height;
   display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
-  padding: 3em;
+  @include fadeDown(6s);
+
+  @include responsive('sm') {
+    padding: 0 20px;
+  }
+
+  @include responsive('lg') {
+    padding: 0 80px;
+  }  
 
   @include montserratFont(400, normal);
 
@@ -17,7 +30,12 @@
   }
 
   &__links {
-    display: flex;
+    @include responsive('sm') {
+      display: none;
+    }
+    @include responsive('md') {
+      display: flex;
+    }
     gap: 1em;
     font-size: 14px;
     &__item {
@@ -30,7 +48,13 @@
   }
 
   &__account {
-    display: flex;
+    @include responsive('sm') {
+      display: none;
+    }
+
+    @include responsive('md') {
+      display: flex;
+    }
     align-items: center;
     gap: 8px;
     font-size: 14px;
