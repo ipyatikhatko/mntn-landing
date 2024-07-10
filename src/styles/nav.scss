@@ -13,7 +13,7 @@
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  @include fadeDown(6s);
+  @include fadeDown(5s);
 
   @include responsive('sm') {
     padding: 0 20px;
