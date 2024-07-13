@@ -23,7 +23,9 @@
     padding: 0 80px;
   }  
 
-  @include montserratFont(400, normal);
+  & {
+    @include montserratFont(400, normal);
+  }
 
   &__logo {
     @include bonaFont(400, bold);
@@ -36,8 +38,12 @@
     @include responsive('md') {
       display: flex;
     }
-    gap: 1em;
-    font-size: 14px;
+
+    & {
+      gap: 1em;
+      font-size: 14px;
+    }
+
     &__item {
       text-decoration: none;
       color: $text-main;
@@ -55,16 +61,19 @@
     @include responsive('md') {
       display: flex;
     }
-    align-items: center;
-    gap: 8px;
-    font-size: 14px;
-    appearance: none;
-    text-decoration: none;
-    background-color: transparent;
-    color: $text-main;
-    border: none;
-    cursor: pointer;
-    @include montserratFont(400, normal);
+
+    & {
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      appearance: none;
+      text-decoration: none;
+      background-color: transparent;
+      color: $text-main;
+      border: none;
+      cursor: pointer;
+      @include montserratFont(400, normal);
+    }
     &:hover {
       opacity: 0.5;
     }

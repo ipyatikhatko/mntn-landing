@@ -16,6 +16,11 @@
   <div id="root">
     {{> nav}}
     {{> hero}}
+    <section id="steps" class="steps-container">
+      {{#each steps}}
+        {{> step this}}
+      {{/each}}
+    </section>
   </div>
   <script src="main.js"></script>
 </body>

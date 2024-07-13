@@ -1,10 +1,12 @@
 @mixin backgroundImage($url, $w, $h) {
-  background-image: url($url);
-  width: $w;
-  height: $h;
-  display: block;
-  background-repeat: no-repeat;
-  background-size: contain;
+  & {
+    background-image: url($url);
+    width: $w;
+    height: $h;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
 }
 
 /*
@@ -65,8 +67,10 @@ $breakpoints: (
       transform: scale($to);
     }
   }
-
-  animation-name: anim;
-  animation-fill-mode: both;
+  & {
+    animation-name: anim;
+    animation-fill-mode: both;
+  }
   @content;
+  
 }

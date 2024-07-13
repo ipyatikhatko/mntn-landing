@@ -1,0 +1,127 @@
+@import '_variables';
+@import '_helpers';
+
+.steps-container {
+  display: flex;
+  flex-direction: column;
+  max-width: $desktop;
+  margin: 0 auto;
+  gap: 5em;
+  padding-bottom: 3em;
+  @include responsive('lg') {
+    gap: 10em;
+  }
+  .step {
+    z-index: 300;
+    display: flex;
+    gap: 2em;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 2em;
+
+    @include responsive('lg') {
+      flex-direction: row-reverse;
+      &:nth-child(odd) {
+        flex-direction: row;
+      }
+    }
+
+    &__number {
+      position: absolute;
+      top: -4rem;
+      right: -1rem;
+      font-size: 8rem;
+      line-height: 9rem;
+      color: rgba(255, 255, 255, 10%);
+      @include montserratFont(800, normal);
+      @include responsive('md') {
+        top: -2rem;
+        left: -4rem;
+        font-size: 10rem;
+      }
+      @include responsive('lg') {
+        top: -2rem;
+        left: -8rem;
+        font-size: 14rem;
+      }
+    }
+
+    &__content {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 2em;
+      z-index: 300;
+      width: 100%;
+      @include responsive('md') {
+        width: 40%;
+      }
+
+    }
+
+    &__sub {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      letter-spacing: 6px;
+      color: $text-accent;
+      text-transform: uppercase;
+      z-index: inherit;
+      text-wrap: nowrap;
+      @include montserratFont(500, normal);
+      @include responsive('sm') {
+        font-size: 12px;
+      }
+      @include responsive('md') {
+        font-size: 14px;
+      }
+    }
+  
+    &__subline {
+      height: 2px;
+      background-color: $text-accent;
+      @include responsive('sm') {
+        width: 20px;
+      }
+      @include responsive('md') {
+        width: 45px;
+      }
+    }
+
+    &__title {
+      text-transform: capitalize;
+      color: $text-main;
+      z-index: inherit;
+      @include bonaFont(700, normal);
+      @include responsive('sm') {
+        font-size: 24px;
+      }
+      @include responsive('md') {
+        font-size: 32px;
+      }
+      @include responsive('lg') {
+        font-size: 44px;
+      }
+    }
+
+    &__paragraph {
+      color: $text-main;
+      line-height: 32px;
+      font-size: 12px;
+      z-index: inherit;
+      @include montserratFont(400, normal);
+      @include responsive('md') {
+        font-size: 14px;
+      }
+    }
+
+    &__image {
+      object-fit: cover;
+      width: 100%;
+      border-radius: 8px;
+      @include responsive('md') {
+        width: 40%;
+      }
+    }
+  }
+}

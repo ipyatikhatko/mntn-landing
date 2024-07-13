@@ -69,13 +69,13 @@
   }
 
   &__socials-instagram {
-    @include backgroundImage('./assets/icons/instagram.svg', 20px, 20px);
     transform: rotate(-90deg);
+    @include backgroundImage('./assets/icons/instagram.svg', 20px, 20px);
   }
 
   &__socials-twitter {
-    @include backgroundImage('./assets/icons/twitter.svg', 20px, 20px);
     transform: rotate(-90deg);
+    @include backgroundImage('./assets/icons/twitter.svg', 20px, 20px);
   }
 
   &__heading {
@@ -89,6 +89,9 @@
     display: flex;
     align-items: center;
     gap: 16px;
+    letter-spacing: 6px;
+    color: $text-accent;
+    text-transform: uppercase;
     @include montserratFont(500, normal);
     @include responsive('sm') {
       font-size: 12px;
@@ -96,26 +99,24 @@
     @include responsive('md') {
       font-size: 18px;
     }
-    letter-spacing: 6px;
-    color: $text-accent;
-    text-transform: uppercase;
+    
   }
 
   &__heading-subline {
+    height: 2px;
+    background-color: $text-accent;
     @include responsive('sm') {
       width: 20px;
     }
     @include responsive('md') {
       width: 45px;
     }
-    height: 2px;
-    
-    background-color: $text-accent;
   }
 
   &__heading-title {
-    @include fadeDown(3s);
     text-transform: capitalize;
+    color: $text-main;
+    @include fadeDown(3s);
     @include bonaFont(400, normal);
     @include responsive('sm') {
       font-size: 32px;
@@ -128,7 +129,7 @@
     @include responsive('lg') {
       font-size: 64px;
     }
-    color: $text-main;
+    
   }
 
   &__heading-scroll {
@@ -144,12 +145,12 @@
     color: $text-main;
   }
   &__heading-scroll-icon {
-    @include backgroundImage('./assets/icons/arrow_downward.svg', 20px, 20px);
     animation-name: bounce-fade;
     animation-duration: 2s;
     animation-iteration-count: infinite;
     animation-fill-mode: both;
     animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    @include backgroundImage('./assets/icons/arrow_downward.svg', 20px, 20px);
   }
 
   &__bg {
@@ -177,44 +178,58 @@
     top: 0;
     left: 0;
     transform: scale(1.5);
+    z-index: 80;
     @include scaleFromTo(2, 1) {
-      animation-duration: 3s;
-      animation-delay: 1s;
+      & {
+        animation-duration: 3s;
+        animation-delay: 1s;
+      }
     }
     @include responsive('sm') {
       @include backgroundImage('./assets/images/hero-clouds.png', 100%, 700px);
-      background-size: cover;  
+      & {
+        background-size: cover !important;
+      }  
     }
     @include responsive('sm') {
       @include backgroundImage('./assets/images/hero-clouds.png', 100%, 1200px);
-      background-size: cover;
+      & {
+        background-size: cover !important;
+      }  
     }
     
-    z-index: 80;
   }
   &__mountains {
     position: absolute;
     bottom: 0;
     left: 0;
+    z-index: 90;
     @include scaleFromTo(1.2, 1) {
-      animation-duration: 3s;
-      animation-delay: 1s;
+      & {
+        animation-duration: 3s;
+        animation-delay: 1s;
+      }
     }
     @include backgroundImage('./assets/images/hero-mountains.png', 100%, 700px);
-    background-size: cover;
-    z-index: 90;
+    & { 
+      background-size: cover !important; 
+    }
   }
   &__ground {
     position: absolute;
     bottom: 0;
     left: 0;
+    z-index: 100;
     @include scaleFromTo(1, 1.1) {
-      animation-duration: 3s;
-      animation-delay: 1s;
+      & {
+        animation-duration: 3s;
+        animation-delay: 1s;
+      }
     }
     @include backgroundImage('./assets/images/hero-ground.png', 100%, 450px);
-    background-size: cover;
-    z-index: 100;
+    & {
+      background-size: cover !important;
+    }
   }
   
 }
