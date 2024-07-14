@@ -129,6 +129,8 @@
     }
 
     &__image {
+      opacity: 0;
+      transform: translateY(-50);
       object-fit: cover;
       width: 100%;
       border-radius: 8px;

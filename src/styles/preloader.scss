@@ -1,0 +1,20 @@
+@import '_variables';
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $bg-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1100;
+
+  &__container {
+    opacity: 0;
+    width: 100px;
+    height: 100px;
+  }
+}

@@ -7,8 +7,9 @@ const animateStepElement = (root, selector, tweenOptions) => {
   gsap.to(element, {
     scrollTrigger: {
       trigger: element,
-      start: 'bottom bottom'
+      start: 'top bottom'
     },
+    delay: 0.3,
     ...tweenOptions
   })
 }
@@ -48,6 +49,14 @@ export const initStepsAnimation = () => {
       '.step__paragraph',
       {
         x: 0,
+        opacity: 1,
+      }
+    )
+    animateStepElement(
+      el, 
+      '.step__image',
+      {
+        y: 0,
         opacity: 1,
       }
     )

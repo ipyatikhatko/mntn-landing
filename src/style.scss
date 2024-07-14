@@ -3,6 +3,7 @@
 @import "./styles/hero";
 @import "./styles/steps";
 @import "./styles/fonts";
+@import "./styles/preloader";
 
 * {
   margin: 0;
@@ -11,4 +12,22 @@
 
 body {
   background-color: $bg-color;
+}
+
+#root {
+  transition: opacity 1s;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.hide-content {
+  opacity: 0;
+  overflow: hidden;
+}
+
+.show-content {
+  opacity: 1;
+  overflow: auto;
 }

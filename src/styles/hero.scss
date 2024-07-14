@@ -51,7 +51,7 @@
     transform: rotate(90deg);
     animation-name: fade-down-socials;
     animation-duration: 1.5s;
-    animation-delay: 4s;
+    animation-delay: 7s;
     animation-fill-mode: both;
   }
 
@@ -85,7 +85,7 @@
   }
 
   &__heading-sub {
-    @include fadeDown(2s);
+    @include fadeDown(4s);
     display: flex;
     align-items: center;
     gap: 16px;
@@ -116,7 +116,7 @@
   &__heading-title {
     text-transform: capitalize;
     color: $text-main;
-    @include fadeDown(3s);
+    @include fadeDown(5s);
     @include bonaFont(400, normal);
     @include responsive('sm') {
       font-size: 32px;
@@ -133,7 +133,7 @@
   }
 
   &__heading-scroll {
-    @include fadeDown(5s);
+    @include fadeDown(6s);
     display: flex;
     align-items: center;
     gap: 16px;
@@ -182,7 +182,7 @@
     @include scaleFromTo(2, 1) {
       & {
         animation-duration: 3s;
-        animation-delay: 1s;
+        animation-delay: 4s;
       }
     }
     @include responsive('sm') {
@@ -207,7 +207,7 @@
     @include scaleFromTo(1.2, 1) {
       & {
         animation-duration: 3s;
-        animation-delay: 1s;
+        animation-delay: 4s;
       }
     }
     @include backgroundImage('./assets/images/hero-mountains.png', 100%, 700px);
@@ -223,7 +223,7 @@
     @include scaleFromTo(1, 1.1) {
       & {
         animation-duration: 3s;
-        animation-delay: 1s;
+        animation-delay: 4s;
       }
     }
     @include backgroundImage('./assets/images/hero-ground.png', 100%, 450px);
