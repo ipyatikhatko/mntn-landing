@@ -27,6 +27,7 @@
     "webpack-dev-server": "^5.0.4"
   },
   "dependencies": {
+    "gsap": "^3.12.5",
     "handlebars-loader": "^1.7.3"
   }
 }

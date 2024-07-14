@@ -2,6 +2,7 @@
 @import '_helpers';
 
 .steps-container {
+  padding-top: 100px;
   display: flex;
   flex-direction: column;
   max-width: $desktop;
@@ -27,6 +28,9 @@
     }
 
     &__number {
+      transform: translateX(-100px);
+      opacity: 0;
+
       position: absolute;
       top: -4rem;
       right: -1rem;
@@ -60,6 +64,9 @@
     }
 
     &__sub {
+      transform: translateY(-50px);
+      opacity: 0;
+
       display: flex;
       align-items: center;
       gap: 16px;
@@ -89,6 +96,9 @@
     }
 
     &__title {
+      opacity: 0;
+      transform: translateY(50px);
+
       text-transform: capitalize;
       color: $text-main;
       z-index: inherit;
@@ -105,6 +115,9 @@
     }
 
     &__paragraph {
+      opacity: 0;
+      transform: translateX(-50px);
+
       color: $text-main;
       line-height: 32px;
       font-size: 12px;
